@@ -51,10 +51,10 @@ Invoke-Expression -Command 'C:\temp\fslogix\x64\Release\FSLogixAppsSetup.exe /in
 Start-Sleep -Seconds 10
 
 Write-Host '*** WVD AIB CUSTOMIZER PHASE *** START OS CONFIG *** Add FSLogix Settings ***'
-New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\Software\FSLogix\Profiles' -Name 'VHDLocations' -Value '\\vmanfsmb-d5da.int.nihp.nhs.uk\volenguksouth001' -PropertyType MultiString -Forece | Out-Null
-New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\Software\FSLogix\Profiles' -Name 'Enabled' -Value '1' -PropertyType DWORD -Forece | Out-Null
-New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\Software\FSLogix\Profiles' -Name 'DeleteLocalProfileWhenVHDShouldApply' -Value '1' -PropertyType DWORD -Forece | Out-Null
-New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\Software\FSLogix\Profiles' -Name 'FlipFlopProfileDirectoryName' -Value '1' -PropertyType DWORD -Forece | Out-Null
+New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\Software\FSLogix\Profiles' -Name 'VHDLocations' -Value '\\vmanfsmb-d5da.int.nihp.nhs.uk\volenguksouth001' -PropertyType MultiString -Force | Out-Null
+New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\Software\FSLogix\Profiles' -Name 'Enabled' -Value '1' -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\Software\FSLogix\Profiles' -Name 'DeleteLocalProfileWhenVHDShouldApply' -Value '1' -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\Software\FSLogix\Profiles' -Name 'FlipFlopProfileDirectoryName' -Value '1' -PropertyType DWORD -Force | Out-Null
 
 Write-Host '*** WVD AIB CUSTOMIZER PHASE *** START OS CONFIG *** Update the recommended OS configuration ***'
 Write-Host '*** WVD AIB CUSTOMIZER PHASE *** SET OS REGKEY *** Disable Automatic Updates ***'
